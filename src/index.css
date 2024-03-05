@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #13f478;
+  background-color: #2b2635;
+  overflow-y: auto;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  border: solid;
+  background-color: #c6eb102a;
+}
+
+.heading {
+  text-Align: center;
+  font-weight: bold;
+}
+
+hr {
+  border: solid 2px  #13f478;
+}
+.navbar-fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.food-card-container {
+  gap: 8px;
+  justify-content: center;
+  margin: auto;
+}
+
+.food-card {
+  margin: 2%;
+  width: 18rem;
+  color: #063913;
+  background-color: rgb(156, 222, 191);
+  border: solid 3px  #13f478;
+  border-radius: 8px;
+}
+
+
+/* Modal CSS starts here*/
+.modal-styles {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-Color: rgb(34,34,34);
+  color: white;
+  transform: translate(-50%, -50%);
+  z-Index: 20;
+  height: 90%;
+  width: 90%
+}
+
+.overlay-styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-Color: rgba(0, 0, 0, .7);
+  z-Index: 10
+}
+
+/* Cart table CSS starts here*/
+.cart-table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) {
+  width: 10%;
+}
+
+.cart-table th:nth-child(1),
+.cart-table td:nth-child(1) {
+  width: 30%;
+}
+
+.cart-table th, .cart-table td {
+  border: solid 2px  #13f478;
+  padding: 8px;
+  text-align: left;
+}
+
+
+/* MyOrders table CSS starts here*/
+.order-table {
+  width: 25%;
+  margin-left: 10%;
+  margin-top: 80px;
+}
+
+.order-table th:nth-child(1),
+.order-table td:nth-child(1) {
+  width: 30%;
+}
+
+.order-table th:nth-child(2),
+.order-table td:nth-child(2),
+.order-table th:nth-child(3),
+.order-table td:nth-child(3) {
+  width: 5%;
+}
+
+.order-table td {
+  border: solid 2px  #13f478;
+  padding: 8px;
+  color: white;
+}
+
+.order-table th {
+  color: #063913;
+  background-color: rgb(156, 222, 191);
+}
+
+.about-us-container {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: auto;
+    width: 80%;
+    padding: 15px;
+    font-size: larger;
+    color: #063913;
+    background-color: rgb(156, 222, 191);
+    border: solid 3px  #13f478;
+    border-radius: 8px;
+}
