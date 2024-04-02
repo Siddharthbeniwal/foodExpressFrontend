@@ -26,3 +26,5 @@ export const ABOUT_US_INFO = {
 
   CREDENTIAL: 'johndoe@gmail.com'
 }
+
+export const LOGIN_ALERT_MSG = 'Please login to add items to your cart.'

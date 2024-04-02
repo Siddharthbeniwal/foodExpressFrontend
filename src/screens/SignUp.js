@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { API_URLS } from '../appConstants';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 const SignUp = () => {
 
     const [userData, setUserData] = useState({
@@ -9,6 +12,7 @@ const SignUp = () => {
         email: '',
         password: ''
     })
+    const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
     const handleSignUp = async (e) => {
@@ -34,7 +38,9 @@ const SignUp = () => {
                 navigate('/login')
             }
             else {
-                alert('Something went wrong')
+                json && json.error[0] && json.error[0].msg ?
+                    alert(json.error[0].msg) :
+                    alert('Something went wrong')
             }
         } catch (error) {
             console.log(error);
@@ -47,6 +53,11 @@ const SignUp = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div className='form-container'>
             <form>
@@ -76,14 +87,25 @@ const SignUp = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        id="password"
-                        name="password"
-                        value={userData.password}
-                        onChange={(e) => handleChange(e)}
-                        placeholder="Password" />
+                    <div className='d-flex align-items-center'>
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            value={userData.password}
+                            onChange={(e) => handleChange(e)}
+                            placeholder="Password"
+                        />
+
+                        <span style={{ marginLeft: '-25px' }}>
+                            <FontAwesomeIcon
+                                icon={showPassword ? faEyeSlash : faEye}
+                                className="eye-icon"
+                                onClick={togglePasswordVisibility}
+                            />
+                        </span>
+                    </div>
                 </div>
                 <button
                     type="submit"

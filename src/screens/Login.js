@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { API_URLS, ABOUT_US_INFO } from '../appConstants';
+import { API_URLS } from '../appConstants';
 import { setIsLoggedIn } from '../features/foodExpressSlice'
 import { useDispatch } from 'react-redux';
 
@@ -11,8 +11,8 @@ const Login = () => {
 
     const navigate = useNavigate();
     const [userCredentials, setUserCredentials] = useState({
-        email: ABOUT_US_INFO.CREDENTIAL,
-        password: ABOUT_US_INFO.CREDENTIAL
+        email: '',
+        password: ''
     })
     const [showPassword, setShowPassword] = useState(false);
 
