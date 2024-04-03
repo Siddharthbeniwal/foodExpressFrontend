@@ -29,8 +29,7 @@ const SignUp = () => {
             })
         })
         const json = await response.json()
-        console.log('json', json)
-
+ 
         try {
 
             if (json.success) {
@@ -40,7 +39,8 @@ const SignUp = () => {
             else {
                 json && json.error[0] && json.error[0].msg ?
                     alert(json.error[0].msg) :
-                    alert('Something went wrong')
+                    json.error ? alert(json.error) :
+                        alert('Something went wrong')
             }
         } catch (error) {
             console.log(error);
